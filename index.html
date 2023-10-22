@@ -58,16 +58,41 @@
                 }
             }
 
-            if (result == "win") {
-                return "Congrats, you win! " + playerSelection + " beats " + computerSelection;
+            return result;
+
+        }
+
+        function Game() {
+            // to do: add prompt, loop game 5 times, keep score, report winner or loser, modify return value of playRound to be more useful
+            let playerScore = 0;
+            let computerScore = 0;
+            let currentRound;
+            let input = prompt("Please enter a choice between rock, paper and scissors: ");
+
+            for (let i = 0; i < 5; i++) {
+                console.log("Round " + (i + 1) + " start!")
+                currentRound = playRound(input, getComputerChoice);
+                if (currentRound = "win") {
+                    playerScore += 1;
+                    console.log("You win this round!")
+                } else if (currentRound = "lose") {
+                    computerScore += 1;
+                    console.log("You lost this round!")
+                } else if (currentRound = "tie") {
+                    playerScore += 1;
+                    computerScore += 1
+                    console.log("You tied this round!")
+                }
+                console.log("Score is currrently: Player: " + playerScore + ", Computer: " + computerScore);
             }
-            else if (result == "lose") {
-                return "Darn, you lost!" + playerSelection + " beats " + computerSelection;
+            if (playerScore > computerScore) {
+                return ("You won the whole thing, congrats!! The final score is " + playerScore + " - " + computerScore + " in your favor!");
+            } else if (playerScore < computerScore) {
+                return ("Unfortunately the computer won! The final score is " + computerScore + " - " + playerScore + " in their favor.");
+            } else if (playerScore == computerScore) {
+                return ("Wow!!! It was a tie! The final score is " + playerScore + " - " + computerScore);
             }
-            else if (result == "tie") {
-                return "It's a tie! You both chose " + playerSelection;
-            }
-            
+
         }
     </script>
 </body>
