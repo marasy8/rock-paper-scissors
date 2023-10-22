@@ -59,13 +59,13 @@
             }
 
             if (result == "win") {
-                return "Congrats, you win!";
+                return "Congrats, you win! " + playerSelection + " beats " + computerSelection;
             }
             else if (result == "lose") {
-                return "Darn, you lost!";
+                return "Darn, you lost!" + playerSelection + " beats " + computerSelection;
             }
             else if (result == "tie") {
-                return "It's a tie!";
+                return "It's a tie! You both chose " + playerSelection;
             }
             
         }
