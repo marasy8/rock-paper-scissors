@@ -60,8 +60,10 @@
                     result = "lose";
                 }
             }
-
+            console.log("result " + result);
             return result;
+            
+
         }
 
         function Game() {
@@ -75,13 +77,16 @@
                 let input = prompt("Please enter a choice between rock, paper and scissors: ");
                 
                 currentRound = playRound(input, getComputerChoice());
-                if (currentRound = "win") {
+                // console.log("input" + input);
+                // console.log("comp choice" + getComputerChoice());
+                console.log("currentround" + currentRound);
+                if (currentRound == "win") {
                     playerScore += 1;
                     console.log("You win this round!")
-                } else if (currentRound = "lose") {
+                } else if (currentRound == "lose") {
                     computerScore += 1;
                     console.log("You lost this round!")
-                } else if (currentRound = "tie") {
+                } else if (currentRound == "tie") {
                     playerScore += 1;
                     computerScore += 1
                     console.log("You tied this round!")
