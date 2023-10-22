@@ -75,8 +75,6 @@
                 console.log("Round " + (i + 1) + " start!")
                 let input = prompt("Please enter a choice between rock, paper and scissors: ");
                 currentRound = playRound(input, getComputerChoice());
-                console.log("currentround" + currentRound);
-
                 if (currentRound == "win") {
                     playerScore += 1;
                     console.log("You win this round!")
