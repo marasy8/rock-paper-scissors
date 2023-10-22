@@ -11,6 +11,9 @@
 
         const choices = ["rock", "paper", "scissors"];
 
+        Game();
+
+
         function getComputerChoice() {
             return choices[Math.floor(Math.random() * choices.length)];
         }
@@ -19,8 +22,8 @@
 
             let result;
             // align cases
-            playerSelection = playerSelection.toLowerCase();
-            computerSelection = computerSelection.toLowerCase();
+            // playerSelection = playerSelection.toLowerCase();
+            // computerSelection = computerSelection.toLowerCase();
 
             if (playerSelection == "rock") {
                 if (computerSelection == "scissors") {
@@ -59,7 +62,6 @@
             }
 
             return result;
-
         }
 
         function Game() {
@@ -67,11 +69,12 @@
             let playerScore = 0;
             let computerScore = 0;
             let currentRound;
-            let input = prompt("Please enter a choice between rock, paper and scissors: ");
-
+            
             for (let i = 0; i < 5; i++) {
                 console.log("Round " + (i + 1) + " start!")
-                currentRound = playRound(input, getComputerChoice);
+                let input = prompt("Please enter a choice between rock, paper and scissors: ");
+                
+                currentRound = playRound(input, getComputerChoice());
                 if (currentRound = "win") {
                     playerScore += 1;
                     console.log("You win this round!")
