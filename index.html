@@ -7,7 +7,68 @@
 </head>
 <body>
     <script>
-        
+        console.log("Hello World!")
+
+        const choices = ["rock", "paper", "scissors"];
+
+        function getComputerChoice() {
+            return choices[Math.floor(Math.random() * choices.length)];
+        }
+
+        function playRound(playerSelection, computerSelection) {
+
+            let result;
+            // align cases
+            playerSelection = playerSelection.toLowerCase();
+            computerSelection = computerSelection.toLowerCase();
+
+            if (playerSelection == "rock") {
+                if (computerSelection == "scissors") {
+                    result = "win";
+                }
+                else if (computerSelection == "paper") {
+                    result = "lose";
+                }
+                else if (computerSelection == "rock") {
+                    result = "tie";
+                }
+            }
+
+            if (playerSelection == "paper") {
+                if (computerSelection == "scissors") {
+                    result = "lose";
+                }
+                else if (computerSelection == "paper") {
+                    result = "tie";
+                }
+                else if (computerSelection == "rock") {
+                    result = "win";
+                }
+            }
+
+            if (playerSelection == "scissors") {
+                if (computerSelection == "scissors") {
+                    result = "tie";
+                }
+                else if (computerSelection == "paper") {
+                    result = "win";
+                }
+                else if (computerSelection == "rock") {
+                    result = "lose";
+                }
+            }
+
+            if (result == "win") {
+                return "Congrats, you win!";
+            }
+            else if (result == "lose") {
+                return "Darn, you lost!";
+            }
+            else if (result == "tie") {
+                return "It's a tie!";
+            }
+            
+        }
     </script>
 </body>
 </html>
