@@ -60,26 +60,23 @@
                     result = "lose";
                 }
             }
-            console.log("result " + result);
             return result;
-            
-
         }
 
         function Game() {
+
             // to do: add prompt, loop game 5 times, keep score, report winner or loser, modify return value of playRound to be more useful
             let playerScore = 0;
             let computerScore = 0;
             let currentRound;
             
             for (let i = 0; i < 5; i++) {
+
                 console.log("Round " + (i + 1) + " start!")
                 let input = prompt("Please enter a choice between rock, paper and scissors: ");
-                
                 currentRound = playRound(input, getComputerChoice());
-                // console.log("input" + input);
-                // console.log("comp choice" + getComputerChoice());
                 console.log("currentround" + currentRound);
+
                 if (currentRound == "win") {
                     playerScore += 1;
                     console.log("You win this round!")
@@ -93,6 +90,8 @@
                 }
                 console.log("Score is currrently: Player: " + playerScore + ", Computer: " + computerScore);
             }
+
+            // final score report
             if (playerScore > computerScore) {
                 console.log("You won the whole thing, congrats!! The final score is " + playerScore + " - " + computerScore + " in your favor!");
             } else if (playerScore < computerScore) {
