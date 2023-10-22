@@ -1,6 +1,6 @@
 # rock-paper-scissors
 
-RPS game to be played on the console
+simple RPS game to be played on the console
 
 5 rounds, user prompt input
 
