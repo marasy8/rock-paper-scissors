@@ -10,13 +10,24 @@
     <button id="paper-button">Paper</button>
     <button id="scissors-button">Scissors</button>
 
+    <div>Player Score: </div>
+    <div id="player-score"></div>
+    <div>Computer Score: </div>
+    <div id="computer-score"></div>
+
     <div id="results">Results!</div>
     <script>
 
         const choices = ["rock", "paper", "scissors"];
+        const rockButton = document.querySelector("#rock-button");
+        const paperButton = document.querySelector("#paper-button");
+        const scissorsButton = document.querySelector("#scissors-button");
+        const resultsDiv = document.querySelector("#results");
+        let playerScore = 0;
+        let computerScore = 0;
+        let currentRound;
 
         Game();
-
 
         function getComputerChoice() {
             return choices[Math.floor(Math.random() * choices.length)];
@@ -68,9 +79,15 @@
         }
 
         function Game() {
-            let playerScore = 0;
-            let computerScore = 0;
-            let currentRound;
+            rockButton.addEventListener("click", () => {
+                playRoundDOMOutput("rock", rockButton);
+            });
+            paperButton.addEventListener("click", () => {
+                playRoundDOMOutput("paper", paperButton);
+            });
+            scissorsButton.addEventListener("click", () => {
+                playRoundDOMOutput("scissors", scissorsButton);
+            });
             
             // for (let i = 0; i < 5; i++) {
 
@@ -110,20 +127,7 @@
             content.textContent = result;
         }
 
-        const rockButton = document.querySelector("#rock-button");
-        const paperButton = document.querySelector("#paper-button");
-        const scissorsButton = document.querySelector("#scissors-button");
-        const resultsDiv = document.querySelector("#results");
-
-        rockButton.addEventListener("click", () => {
-            playRoundDOMOutput("rock", rockButton);
-        });
-        paperButton.addEventListener("click", () => {
-            playRoundDOMOutput("paper", paperButton);
-        });
-        scissorsButton.addEventListener("click", () => {
-            playRoundDOMOutput("scissors", scissorsButton);
-        });
+        
 
         
     </script>
