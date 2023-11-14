@@ -103,16 +103,17 @@
 
         }
 
-        function playRoundDOMOutput(choice, parent) {
+        function playRoundDOMOutput(choice) {
             const content = document.createElement("p");
             let result = playRound(choice, getComputerChoice());
-            parent.appendChild(content);
+            resultsDiv.appendChild(content);
             content.textContent = result;
         }
 
         const rockButton = document.querySelector("#rock-button");
         const paperButton = document.querySelector("#paper-button");
         const scissorsButton = document.querySelector("#scissors-button");
+        const resultsDiv = document.querySelector("#results");
 
         rockButton.addEventListener("click", () => {
             playRoundDOMOutput("rock", rockButton);
