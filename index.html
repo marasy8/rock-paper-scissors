@@ -27,7 +27,6 @@
         const computerDiv = document.querySelector("#computer-score");
         let playerScore = 0;
         let computerScore = 0;
-        let currentRound;
 
         Game();
 
@@ -36,12 +35,10 @@
         }
 
         function playRound(playerSelection, computerSelection) {
-
             let result;
             // align cases
             playerSelection = playerSelection.toLowerCase();
             computerSelection = computerSelection.toLowerCase();
-
             if (playerSelection == "rock") {
                 if (computerSelection == "scissors") {
                     result = "win";
@@ -53,7 +50,6 @@
                     result = "tie";
                 }
             }
-
             if (playerSelection == "paper") {
                 if (computerSelection == "scissors") {
                     result = "lose";
@@ -65,7 +61,6 @@
                     result = "win";
                 }
             }
-
             if (playerSelection == "scissors") {
                 if (computerSelection == "scissors") {
                     result = "tie";
@@ -81,7 +76,6 @@
         }
 
         function Game() {
-
             // add click event listeners for the rps buttons
             rockButton.addEventListener("click", () => {
                 playRoundDOMOutput("rock", rockButton);
@@ -92,29 +86,6 @@
             scissorsButton.addEventListener("click", () => {
                 playRoundDOMOutput("scissors", scissorsButton);
             });
-            
-            // for (let i = 0; i < 5; i++) {
-
-            //     console.log("Round " + (i + 1) + " start!")
-            //     let input = prompt("Please enter a choice between rock, paper and scissors: ");
-            //     currentRound = playRound(input, getComputerChoice());
-            //     if (currentRound == "win") {
-            //         playerScore += 1;
-            //         console.log("You win this round!")
-            //     } else if (currentRound == "lose") {
-            //         computerScore += 1;
-            //         console.log("You lost this round!")
-            //     } else if (currentRound == "tie") {
-            //         playerScore += 1;
-            //         computerScore += 1
-            //         console.log("You tied this round!")
-            //     }
-            //     console.log("Score is currrently: Player: " + playerScore + ", Computer: " + computerScore);
-            // } 
-            // remove the above 5 round logic for step 1
-
-
-
         }
 
         function playRoundDOMOutput(choice) {
@@ -122,7 +93,6 @@
             let result = playRound(choice, getComputerChoice());
             resultsDiv.appendChild(content);
             content.textContent = result;
-
             if (result == "win") {
                 playerScore += 1;
                 playerDiv.textContent = playerScore;
@@ -131,7 +101,6 @@
                 computerScore += 1;
                 computerDiv.textContent = computerScore;
             }
-
             if (playerScore >= 5 || computerScore >= 5) {
                 // final score report
                 let endText;
@@ -147,10 +116,6 @@
                 finalScore.textContent = endText;
             }
         }
-
-        
-
-        
     </script>
 </body>
 </html>
