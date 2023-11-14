@@ -11,9 +11,9 @@
     <button id="scissors-button">Scissors</button>
 
     <div>Player Score: </div>
-    <div id="player-score"></div>
+    <div id="player-score">0</div>
     <div>Computer Score: </div>
-    <div id="computer-score"></div>
+    <div id="computer-score">0</div>
 
     <div id="results">Results!</div>
     <script>
@@ -23,6 +23,8 @@
         const paperButton = document.querySelector("#paper-button");
         const scissorsButton = document.querySelector("#scissors-button");
         const resultsDiv = document.querySelector("#results");
+        const playerDiv = document.querySelector("#player-score");
+        const computerDiv = document.querySelector("#computer-score");
         let playerScore = 0;
         let computerScore = 0;
         let currentRound;
@@ -123,9 +125,11 @@
 
             if (result == "win") {
                 playerScore += 1;
+                playerDiv.textContent = playerScore;
 
             } else if (result == "lose") {
                 computerScore += 1;
+                computerDiv.textContent = computerScore;
             }
 
             if (playerScore >= 5 || computerScore >= 5) {
@@ -140,7 +144,7 @@
                 }
                 const finalScore = document.createElement("p");
                 resultsDiv.appendChild(finalScore);
-                finalScore.textContent = ""
+                finalScore.textContent = endText;
             }
         }
 
