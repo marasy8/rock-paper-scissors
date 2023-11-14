@@ -106,7 +106,7 @@
         function playRoundDOMOutput(choice, parent) {
             const content = document.createElement("p");
             let result = playRound(choice, getComputerChoice());
-            parent.addChild(content);
+            parent.appendChild(content);
             content.textContent = result;
         }
 
