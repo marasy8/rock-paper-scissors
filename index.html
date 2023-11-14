@@ -6,6 +6,15 @@
     <title>Rock-Paper-Scissors</title>
 </head>
 <body>
+    <button class="rock-button">
+        Rock
+    </button>
+    <button class="paper-button">
+        Paper
+    </button>
+    <button class="scissors-button">
+        Scissors
+    </button>
     <script>
 
         const choices = ["rock", "paper", "scissors"];
@@ -69,24 +78,25 @@
             let computerScore = 0;
             let currentRound;
             
-            for (let i = 0; i < 5; i++) {
+            // for (let i = 0; i < 5; i++) {
 
-                console.log("Round " + (i + 1) + " start!")
-                let input = prompt("Please enter a choice between rock, paper and scissors: ");
-                currentRound = playRound(input, getComputerChoice());
-                if (currentRound == "win") {
-                    playerScore += 1;
-                    console.log("You win this round!")
-                } else if (currentRound == "lose") {
-                    computerScore += 1;
-                    console.log("You lost this round!")
-                } else if (currentRound == "tie") {
-                    playerScore += 1;
-                    computerScore += 1
-                    console.log("You tied this round!")
-                }
-                console.log("Score is currrently: Player: " + playerScore + ", Computer: " + computerScore);
-            }
+            //     console.log("Round " + (i + 1) + " start!")
+            //     let input = prompt("Please enter a choice between rock, paper and scissors: ");
+            //     currentRound = playRound(input, getComputerChoice());
+            //     if (currentRound == "win") {
+            //         playerScore += 1;
+            //         console.log("You win this round!")
+            //     } else if (currentRound == "lose") {
+            //         computerScore += 1;
+            //         console.log("You lost this round!")
+            //     } else if (currentRound == "tie") {
+            //         playerScore += 1;
+            //         computerScore += 1
+            //         console.log("You tied this round!")
+            //     }
+            //     console.log("Score is currrently: Player: " + playerScore + ", Computer: " + computerScore);
+            // } 
+            // remove the above 5 round logic for step 1
 
             // final score report
             if (playerScore > computerScore) {
