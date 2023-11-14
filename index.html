@@ -92,14 +92,17 @@
             const content = document.createElement("p");
             let result = playRound(choice, getComputerChoice());
             resultsDiv.appendChild(content);
-            content.textContent = result;
             if (result == "win") {
                 playerScore += 1;
                 playerDiv.textContent = playerScore;
+                content.textContent = "You win this round!";
 
             } else if (result == "lose") {
                 computerScore += 1;
                 computerDiv.textContent = computerScore;
+                content.textContent = "You lost this round!";
+            } else if (result == "tie") {
+                content.textContent = "You tied this round!";
             }
             if (playerScore >= 5 || computerScore >= 5) {
                 // final score report
