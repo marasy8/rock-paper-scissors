@@ -103,19 +103,28 @@
 
         }
 
+        function playRoundDOMOutput(choice, parent) {
+            const content = document.createElement("p");
+            let result = playRound(choice, getComputerChoice());
+            parent.addChild(content);
+            content.textContent = result;
+        }
+
         const rockButton = document.querySelector("#rock-button");
         const paperButton = document.querySelector("#paper-button");
         const scissorsButton = document.querySelector("#scissors-button");
 
         rockButton.addEventListener("click", () => {
-            console.log(playRound("rock", getComputerChoice()));
+            playRoundDOMOutput("rock", rockButton);
         });
         paperButton.addEventListener("click", () => {
-            console.log(playRound("paper", getComputerChoice()));
+            playRoundDOMOutput("paper", paperButton);
         });
         scissorsButton.addEventListener("click", () => {
-            console.log(playRound("scissors", getComputerChoice()));
+            playRoundDOMOutput("scissors", scissorsButton);
         });
+
+        
     </script>
 </body>
 </html>
