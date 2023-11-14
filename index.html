@@ -79,6 +79,8 @@
         }
 
         function Game() {
+
+            // add click event listeners for the rps buttons
             rockButton.addEventListener("click", () => {
                 playRoundDOMOutput("rock", rockButton);
             });
@@ -109,14 +111,7 @@
             // } 
             // remove the above 5 round logic for step 1
 
-            // final score report
-            if (playerScore > computerScore) {
-                console.log("You won the whole thing, congrats!! The final score is " + playerScore + " - " + computerScore + " in your favor!");
-            } else if (playerScore < computerScore) {
-                console.log("Unfortunately the computer won! The final score is " + computerScore + " - " + playerScore + " in their favor.");
-            } else if (playerScore == computerScore) {
-                console.log("Wow!!! It was a tie! The final score is " + playerScore + " - " + computerScore);
-            }
+
 
         }
 
@@ -125,6 +120,28 @@
             let result = playRound(choice, getComputerChoice());
             resultsDiv.appendChild(content);
             content.textContent = result;
+
+            if (result == "win") {
+                playerScore += 1;
+
+            } else if (result == "lose") {
+                computerScore += 1;
+            }
+
+            if (playerScore >= 5 || computerScore >= 5) {
+                // final score report
+                let endText;
+                if (playerScore > computerScore) {
+                    endText = "You won the whole thing, congrats!! The final score is " + playerScore + " - " + computerScore + " in your favor!";
+                } else if (playerScore < computerScore) {
+                    endText = "Unfortunately the computer won! The final score is " + computerScore + " - " + playerScore + " in their favor.";
+                } else if (playerScore == computerScore) {
+                    endText = "Wow!!! It was a tie! The final score is " + playerScore + " - " + computerScore;
+                }
+                const finalScore = document.createElement("p");
+                resultsDiv.appendChild(finalScore);
+                finalScore.textContent = ""
+            }
         }
 
         
